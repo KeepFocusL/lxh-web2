@@ -18,7 +18,7 @@ public class MyFirstServlet implements Servlet {
     }
 
     @Override
-    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+    public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
         System.out.println("MyFirstServlet.service");
     }
 
