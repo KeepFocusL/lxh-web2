@@ -1,9 +1,11 @@
 package io.github.keepfocusl.lxhweb2.day240904;
 
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebServlet;
 
 import java.io.IOException;
 
+@WebServlet("/life-cycle")
 public class LifeCycleDemoServlet implements Servlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -17,7 +19,11 @@ public class LifeCycleDemoServlet implements Servlet {
 
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-        System.out.println("LifeCycleDemoServlet.service");
+        // 在 Java 研究/学习陌生的东西
+        // 直接 sout
+        // 如果打印出来不是 ***@***
+        System.out.println(res);
+        res.getWriter().write("LifeCycleDemoServlet.service");
     }
 
     @Override
