@@ -15,7 +15,7 @@ public class LangServlet extends HttpServlet {
         String header = request.getHeader("accept-language");
         String responseTest = "Hello World!";
         if (header.startsWith("zh")) {
-            response.setContentType("text/html");
+            response.setContentType("text/html;charset=UTF-8");
             responseTest = "肚子饿了！";
         }
         response.getWriter().write(responseTest);
