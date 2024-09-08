@@ -12,7 +12,8 @@ import java.io.IOException;
 public class LangServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().write("LangServlet");
+       String header = request.getHeader("accept-language");
+        response.getWriter().write(header);
     }
 
     @Override
