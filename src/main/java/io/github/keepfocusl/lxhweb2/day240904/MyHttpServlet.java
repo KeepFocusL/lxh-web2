@@ -14,13 +14,13 @@ public class MyHttpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        System.out.println("MyHttpServlet.doGet: username=  " + username + ", password=" + password);
+        resp.getWriter().write("MyHttpServlet.doGet: username=  " + username + ", password=" + password);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        System.out.println("MyHttpServlet.doPost: username=" + username + ", password=" + password);
+        resp.getWriter().write("MyHttpServlet.doPost: username=" + username + ", password=" + password);
     }
 }
