@@ -3,3 +3,9 @@ GET http://localhost:8080/lxh_web2_war/lang
 
 ### 发起 POST 请求
 POST http://localhost:8080/lxh_web2_war/lang
+
+### 用户自己决定需要显示什么语言 - 中文
+GET http://localhost:8080/lxh_web2_war/lang?lan=zh
+
+### 用户自己决定需要显示什么语言 - 英文
+GET http://localhost:8080/lxh_web2_war/lang?lan=en
