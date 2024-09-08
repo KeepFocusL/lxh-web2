@@ -13,6 +13,9 @@ public class LangServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String header = request.getParameter("lan");
+        if (header == null) {
+            header = request.getHeader("accept-language");
+        }
         String responseTest = "Hello World!";
         if (header.startsWith("zh")) {
             response.setContentType("text/html;charset=UTF-8");
