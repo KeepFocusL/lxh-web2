@@ -3,4 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+
+    <servlet>
+        <servlet-name>ConfigByXmlServlet</servlet-name>
+        <servlet-class>io.github.keepfocusl.lxhweb2.day240908.ConfigByXmlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfigByXmlServlet</servlet-name>
+        <url-pattern>/config-by-xml-servlet</url-pattern>
+    </servlet-mapping>
 </web-app>
