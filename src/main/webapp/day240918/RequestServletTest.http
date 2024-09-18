@@ -1,0 +1,53 @@
+### RequestServlet1
+GET http://localhost:8080/lxh_web2_war/RequestServlet1
+// 输出：你好，null
+
+### RequestServlet1 with name parameter
+GET http://localhost:8080/lxh_web2_war/RequestServlet1?name=傻逼
+// 输出：你好，傻逼
+
+// === === ===
+
+### RequestServlet2 - show request and response
+GET http://localhost:8080/lxh_web2_war/RequestServlet2
+// 直接打印出 request 和 response 到底是由谁实现的
+
+// === === ===
+
+### RequestServlet3 - request.getXXX()
+GET http://localhost:8080/lxh_web2_war/RequestServlet3
+// 输出：getMethod、getContextPath、getRequestURL、getRequestURI、getQueryString、getHeader("user-agent")
+// System.lineSeparator()
+
+// === === ===
+
+### RequestServlet4 - doGet
+GET http://localhost:8080/lxh_web2_war/RequestServlet4?username=用户名_GET&password=secret
+// 在控制台输出用户传递过来的 username 和 password 的值
+
+### RequestServlet4_1 - doGet - 另一个 url
+GET http://localhost:8080/lxh_web2_war/RequestServlet4_1?username=用户名_GET&password=secret
+// 跟上一个效果一样，但是可以用另一个 url 访问同一个 Servlet
+// 在控制台输出用户传递过来的 username 和 password 的值
+
+### RequestServlet4 - doPost
+POST http://localhost:8080/lxh_web2_war/RequestServlet4
+Content-Type: application/x-www-form-urlencoded
+
+username=用户名_POST&password=secret
+
+// 这里演示的是如何在这个文件，模拟发送 POST 请求
+
+// === === ===
+
+### RequestServlet5 - request.getRequestDispatcher("/other-servlet").forward(request, response)
+// 查看控制台的输出
+GET http://localhost:8080/lxh_web2_war/RequestServlet5
+// 你在浏览器访问 RequestServlet5，实际上，在 RequestServlet5 的内部，调用了 RequestServlet6
+// 同时在 RequestServlet5 中可以额外传递数据给 RequestServlet6（request.setAttribute("key", "value")）
+// RequestServlet6 可以通过 request.getAttribute("...") 获取
+
+### RequestServlet6 - 直接访问 vs 从 RequestServlet5 间接访问
+// 查看控制台的输出，此时在 RequestServlet6 中 request.getAttribute("attr1") 返回为 null
+GET http://localhost:8080/lxh_web2_war/RequestServlet6
+
