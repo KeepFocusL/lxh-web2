@@ -10,9 +10,12 @@ import java.io.IOException;
 @WebServlet("/RequestServlet1")
 public class RequestServlet1 extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=UTF-8");
-        resp.getWriter().write("你好, null");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+
+        response.setHeader("content-type", "text/html;charset=utf-8");
+
+        response.getWriter().write("<h1>你好，" + name + "</h1>");
     }
 
     @Override
