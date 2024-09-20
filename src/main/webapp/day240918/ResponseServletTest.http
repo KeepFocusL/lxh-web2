@@ -1,0 +1,28 @@
+### ResponseServlet1 - 跳转 - setStatus(...) + setHeader("Location", "...")
+GET http://localhost:8080/iae_web2_war/ResponseServlet1
+// 观察跟之前讲的「转发」的差异 - request.getRequestDispatcher("...").forward(request, response)
+
+### ResponseServlet2 - 复习 response.getWriter().write(...)
+GET http://localhost:8080/iae_web2_war/ResponseServlet2
+
+### ResponseServlet3 - write img
+GET http://localhost:8080/iae_web2_war/ResponseServlet3
+// 除了往客户端写文本，也可以直接写图片等
+
+### ResponseServlet4 - write img - IOUtils
+GET http://localhost:8080/iae_web2_war/ResponseServlet4
+// 引入第三方库，更方便完成 IO 相关操作 `commons-io`
+
+### ResponseServlet5 - write img - Content-Disposition:attachment
+GET http://localhost:8080/iae_web2_war/ResponseServlet5
+// 服务端：设置符合协议的特定请求头；客户端：按照协议解析特定的请求头，并做相应处理
+
+### ResponseServlet6 - write img - Content-Disposition:attachment;filename=custom-name.png
+GET http://localhost:8080/iae_web2_war/ResponseServlet6
+// 在前一个功能的基础上，让客户端按照指定的名称下载
+
+### ResponseServlet7 - redirect - Cache-Control: no-cache
+GET http://localhost:8080/iae_web2_war/ResponseServlet7
+// 这个 Servlet 暂时可以先忽略，后续遇到再来回顾
+// 如果后续遇到修改了跳转链接，发现短期内没生效，可能是客户端缓存了之前的地址
+// 可以设置请求头 Cache-Control: no-cache 明确告诉客户端不要缓存
