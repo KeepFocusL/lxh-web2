@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/RequestServlet4")
+@WebServlet(urlPatterns = {"/RequestServlet4", "/RequestServlet4_1"})
 public class RequestServlet4 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
