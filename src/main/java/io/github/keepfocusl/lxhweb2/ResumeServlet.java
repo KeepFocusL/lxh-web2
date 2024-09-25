@@ -1,4 +1,4 @@
-package io.github.keepfocusl.lxhweb2.day240921;
+package io.github.keepfocusl.lxhweb2;
 
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,11 +12,11 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 
-@WebServlet("/day240921/resume-download")
+@WebServlet("/resume-download")
 public class ResumeServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String path = this.getServletContext().getRealPath("/day240921/resume-demo.pdf");
+        String path = this.getServletContext().getRealPath("/resume-demo.pdf");
         FileInputStream fis = new FileInputStream(path);
 
         ServletOutputStream sos = response.getOutputStream();

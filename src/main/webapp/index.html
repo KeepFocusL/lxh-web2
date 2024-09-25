@@ -1,43 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>lxh-web2</title>
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的主页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-
 <body>
-<h2>day240908</h2>
-<p>
-    <a href="/lxh_web2_war/lang">LangServlet</a> - 根据浏览器设置的首选语言自动决定显示什么内容
-</p>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+        <a class="navbar-brand" href="#">lxh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link " href="resume.html">简历</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">登录</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<p>
-    <a href="/lxh_web2_war/lang?lan=zh">LangServlet</a> - 用户自己通过携带 lan 参数明确指定需要显示什么内容 - lan=zh - 中文
-</p>
-
-<p>
-    <a href="/lxh_web2_war/lang?lan=en">LangServlet</a> - 用户自己通过携带 lan 参数明确指定需要显示什么内容 - lan=en - 英文
-</p>
-<p>
-    <a href="lang" target="_blank">lang</a>,<a href="lan" target="_blank">lana</a>  - 一个 Servlet 可以配置多个 URL
-</p>
-<p>
-    <a href="request-demo1-servlet?page=1&lang=en" target="_blank">从 HTTP 协议的[请求行] 部分获取各种常见信息</a>
-</p>
-
-<hr>
-
-<h2>day240904</h2>
-<ul>
-    <li>什么是 Servlet <br> <img src="day240908/note/img.png" width="500" alt="什么是 Servlet"></li>
-    <li><a href="/lxh_web2_war/life-cycle">Servlet 生命周期</a> - 备注: 看控制台输出</li>
-    <li><a href="day240904/login.html">LifeCycleDemoServlet</a> - HTTP 协议中典型的方法 GET / POST 方法的区别</li>
-    <li>
-        <a href="https://gitee.com/ggmu_1_0/lxh-web2/tree/master/src/main/java/io/github/keepfocusl/lxhweb2/day240904/note"
-           target="_blank">详细笔记</a></li>
-</ul>
-
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

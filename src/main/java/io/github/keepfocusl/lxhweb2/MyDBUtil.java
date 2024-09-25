@@ -1,4 +1,4 @@
-package io.github.keepfocusl.lxhweb2.day240921;
+package io.github.keepfocusl.lxhweb2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class MyDBUtil {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/home", "root", "Lin13169730118.");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/home", "root", "123456");
             System.out.println("Connected to database");
         } catch (Exception e) {
             throw new RuntimeException(e);
