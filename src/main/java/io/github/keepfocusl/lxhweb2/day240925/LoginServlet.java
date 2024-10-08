@@ -1,5 +1,4 @@
-package io.github.keepfocusl.lxhweb2;
-
+package io.github.keepfocusl.lxhweb2.day240925;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,19 +8,17 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+
+
 
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
+        resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
-
         // 前端可以先用 js 提前验证邮箱和密码是否符合规范，比如：邮箱/密码的长度 ...
         String email = req.getParameter("email");
         String password = req.getParameter("password");
@@ -31,7 +28,7 @@ public class LoginServlet extends HttpServlet {
         if (isAuthenticated) {
             // 登录成功
             //resp.sendRedirect(req.getContextPath() + "/dashboard?email="+email);
-            req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+            req.getRequestDispatcher("loginDB.jsp").forward(req, resp);
             // 观察地址栏差异。后续可以通过其他的方式解决
         } else {
             // 登录失败
@@ -39,6 +36,7 @@ public class LoginServlet extends HttpServlet {
             writer.write("<br>");
             writer.write("<a href='" + req.getContextPath() + "/login.html'>返回登录页面</a>");
         }
+
     }
 
     private static boolean authenticate(String email, String password) {

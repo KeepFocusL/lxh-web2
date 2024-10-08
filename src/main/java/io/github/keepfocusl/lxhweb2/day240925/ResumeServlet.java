@@ -1,4 +1,4 @@
-package io.github.keepfocusl.lxhweb2;
+package io.github.keepfocusl.lxhweb2.day240925;
 
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.annotation.WebServlet;
